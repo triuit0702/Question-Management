@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Home {
+public class HomeController {
 
-    @RequestMapping(value= "/")
+    @RequestMapping(value="/")
     public String home() {
-        return "<html><h1>Core category</h1></html>";
+        return "<html><h1>API Category</h1></html>";
     }
 }

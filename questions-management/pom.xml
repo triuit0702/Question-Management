@@ -23,6 +23,7 @@
 		<module>core/core-category-service</module>
 		<module>core/core-question-service</module>
 		<module>core/core-option-service</module>
-		<module>core/composite-question-service</module>
+		<module>composite/composite-question-service</module>
+		<module>api/api-category-service</module>
 	</modules>
 </project>

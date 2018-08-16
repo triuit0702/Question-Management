@@ -1,20 +1,19 @@
-package com.huongdanjava.questionservice.service.impl;
+package com.huongdanjava.categoryservice.service.impl;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.huongdanjava.questionservice.dto.Category;
-import com.huongdanjava.questionservice.service.CoreCategoryService;
+import com.huongdanjava.categoryservice.dto.Category;
+import com.huongdanjava.categoryservice.service.CoreCategoryService;
 
 import reactor.core.publisher.Mono;
 
-@Service
 public class CoreCategoryServiceImpl implements CoreCategoryService{
 
     @Value("${corecategoryservice.url}")
     private String coreCategoryServiceUrl;
-
+    
     @Override
     public String getServiceUrl() {
         // TODO Auto-generated method stub
@@ -22,10 +21,9 @@ public class CoreCategoryServiceImpl implements CoreCategoryService{
     }
 
     @Override
-    public Mono<Category> findById(String categoryId) {
+    public Mono<Category> save(Category category) {
         WebClient client = WebClient.builder().baseUrl(getServiceUrl()).build();
-        
-        WebClient.ResponseSpec responseSpec = client.get().uri("/category/" + categoryId).retrieve();
+        WebClient.ResponseSpec responseSpec = client.post().uri("/category/add").body(BodyInserters.fromObject(category)).retrieve();
         return responseSpec.bodyToMono(Category.class);
     }
 
