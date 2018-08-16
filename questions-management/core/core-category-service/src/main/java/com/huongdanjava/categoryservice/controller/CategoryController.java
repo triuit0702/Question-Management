@@ -28,6 +28,7 @@ public class CategoryController {
 
     @PostMapping("/add")
     public Mono<Category> createCategory(@RequestBody Category category) {
+        System.out.println("IN-cate");
         return categoryRepository.save(category);
     }
 
