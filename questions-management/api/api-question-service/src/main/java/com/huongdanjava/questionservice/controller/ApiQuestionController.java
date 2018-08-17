@@ -1,4 +1,4 @@
-package com.huongdanjava.questionservice.Controller;
+package com.huongdanjava.questionservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,25 +18,25 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/question")
-public class CompositeQuestionController {
+public class ApiQuestionController {
 
     @Autowired
     private CompositeQuestionService compositeQuestionService;
 
     @GetMapping("/all")
-    public Flux<CompositeQuestion> findAllQuestions() {
+    public Flux<CompositeQuestion> findAllQuestion() {
         return compositeQuestionService.findAllQuestions();
     }
 
     @GetMapping("/{id}")
     public Mono<ResponseEntity<CompositeQuestion>> findQuestionById(@PathVariable(value = "id") String questionId) {
-        return compositeQuestionService.findQuestionById(questionId).map(compositeQuestion -> ResponseEntity.ok(compositeQuestion))
+        return compositeQuestionService.findQuestionById(questionId).map(composite -> ResponseEntity.ok(composite))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @PostMapping("/add")
-    public Mono<ResponseEntity<CompositeQuestion>> addNewQuestion(@RequestBody Question question) {
-        return compositeQuestionService.addNewQuestion(question).map(compositeQuestion -> ResponseEntity.ok(compositeQuestion))
+    public Mono<ResponseEntity<CompositeQuestion>> createQuestion(@RequestBody Question question) {
+        return compositeQuestionService.createNewQuestion(question).map(newComposite -> ResponseEntity.ok(newComposite))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 }

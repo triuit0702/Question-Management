@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiCategoryServiceApplication {
+public class ApiQuestionServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiCategoryServiceApplication.class, args);
+		SpringApplication.run(ApiQuestionServiceApplication.class, args);
 	}
 }

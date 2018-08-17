@@ -20,10 +20,12 @@
 	</properties>
 	
 	<modules>
+		<module>api/api-category-service</module>
+		<module>api/api-question-service</module>
 		<module>core/core-category-service</module>
 		<module>core/core-question-service</module>
 		<module>core/core-option-service</module>
 		<module>composite/composite-question-service</module>
-		<module>api/api-category-service</module>
+		
 	</modules>
 </project>

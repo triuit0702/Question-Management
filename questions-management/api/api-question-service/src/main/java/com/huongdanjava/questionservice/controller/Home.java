@@ -1,14 +1,13 @@
-package com.huongdanjava.categoryservice.controller;
+package com.huongdanjava.questionservice.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HomeController {
+public class Home {
 
     @RequestMapping(value= "/")
     public String home() {
-        System.out.println("IN-TEST");
-        return "<html><h1>API category</h1></html>";
+        return "<html><h1>API Question Service</h1></html>";
     }
 }

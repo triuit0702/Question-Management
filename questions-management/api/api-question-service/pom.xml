@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.huongdanjava</groupId>
-	<artifactId>api-category-service</artifactId>
+	<artifactId>api-question-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>api-category-service</name>
-	<description>API Category Service for Questions Management</description>
+	<name>api-question-service</name>
+	<description>API Question Service for Questions Management</description>
 
 	<parent>
 		<groupId>com.huongdanjava</groupId>
@@ -42,11 +42,6 @@
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 	</dependencies>
 
